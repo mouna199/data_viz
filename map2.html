@@ -57,12 +57,12 @@
 			})
 		// the radius is the intensity of the earthquake
 		.attr("r",function(d,i) { return d.mag;
-					})
+			})
 		.transition()
 		.duration(function(d,i) { return 5000;
-					})
+		       })
 		.delay(function(d,i)    {return i*5000;
-				    })
+		       })
 		.style("fill-opacity", 0.5);
 		
 		// printing the labels on the map 
@@ -91,10 +91,10 @@
 		.text("World map of earthquakes from december 2016 to january-2017 ");
 
 
-    });
+ 	 });
 
 
-      };
+   };
     
 
       </script>
