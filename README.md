@@ -1,6 +1,7 @@
                                                  
-                                                   ## Project : World Map of earthquakes 
-###Summary 
+# Project : World Map of earthquakes 
+
+### Summary 
 
 This visualization is a wold map of earthquakes that took place between mid-december 2016 and january 2017, the data used is provided from http://earthquake.usgs.gov/ and contains many variables, the one we used here are the time, the intensity of the earthquake and of course the coordinates of the location. 
 
@@ -14,6 +15,6 @@ The visualization shows that lately, all the intense and frequent earthquakes we
 
 
 ### Resources
-http://earthquake.usgs.gov/
-http://stackoverflow.com/
-https://maptimeboston.github.io/d3-maptime/#/
+(http://earthquake.usgs.gov/)
+(http://stackoverflow.com/)
+(https://maptimeboston.github.io/d3-maptime/#/)
