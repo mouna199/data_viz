@@ -15,7 +15,7 @@ The visualization shows that lately, all the intense and frequent earthquakes we
 
 
 ### Resources
-Data source http://earthquake.usgs.gov
-Documentation of D3 https://d3js.org/
-Tutorial of D3 https://maptimeboston.github.io/d3-maptime/# 
+Data source http://earthquake.usgs.gov <br />
+Documentation of D3 https://d3js.org/ <br />
+Tutorial of D3 https://maptimeboston.github.io/d3-maptime/#  <br />
 http://stackoverflow.com 
