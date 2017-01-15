@@ -1,0 +1,19 @@
+time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type,horizontalError,depthError,magError,magNst,status,locationSource,magSource
+2017-01-10T15:27:15.090Z,-10.1328,161.0275,28.47,6.3,mww,,14,1.268,0.67,us,us10007sd4,2017-01-11T01:20:42.431Z,"104km WNW of Kirakira, Solomon Islands",earthquake,7.5,3,,,reviewed,us,us
+2017-01-10T06:13:47.250Z,4.4634,122.575,612.71,7.3,mww,,18,3.781,1.16,us,us10007s9c,2017-01-13T11:02:09.038Z,"188km SSE of Tabiauan, Philippines",earthquake,7.7,3.9,,,reviewed,us,us
+2017-01-06T02:33:29.320Z,28.2049,53.1159,10,5.3,mb,,49,4.264,0.85,us,us10007rjn,2017-01-07T20:31:53.040Z,"53km SW of Jahrom, Iran",earthquake,6.7,1.8,0.044,173,reviewed,us,us
+2017-01-03T21:52:31.410Z,-19.3258,176.0525,17.1,6.9,mww,,18,2.464,0.75,us,us10007pj6,2017-01-08T23:56:57.260Z,"221km SW of Nadi, Fiji",earthquake,7.3,2.9,,,reviewed,us,us
+2017-01-03T09:09:02.640Z,24.0161,92.0062,36.15,5.5,mb,,38,1.55,0.79,us,us10007pfk,2017-01-06T22:27:59.040Z,"19km NE of Ambasa, India",earthquake,4.2,6.7,0.049,143,reviewed,us,us
+2017-01-02T13:14:02.820Z,-23.3351,179.3064,555.12,6.3,mwb,,36,5.684,0.75,us,us10007p7m,2017-01-05T18:03:47.040Z,"South of the Fiji Islands",earthquake,6.2,3.4,0.041,56,reviewed,us,us
+2016-12-29T22:30:18.360Z,-9.0665,118.6088,72.27,6.2,mwp,,26,3.611,1.52,us,us10007nl0,2017-01-09T20:26:57.461Z,"33km S of Tolotangga, Indonesia",earthquake,4.4,5.1,0.031,142,reviewed,us,us
+2016-12-28T12:38:50.920Z,36.9179,140.4262,10,5.9,mww,,91,0.992,1.52,us,us10007naf,2017-01-13T20:41:54.040Z,"18km NNE of Daigo, Japan",earthquake,4.8,1.8,,,reviewed,us,us
+2016-12-28T09:13:47.243Z,38.3777,-118.8957,8.8,5.5,ml,33,48.58,0.129,0.2187,nn,nn00570744,2017-01-12T18:19:45.639Z,"26km SW of Hawthorne, Nevada",earthquake,,2,0.26,18,reviewed,nn,nn
+2016-12-28T08:22:12.211Z,38.3917,-118.8941,12.3,5.6,ml,40,42.47,0.12,0.1898,nn,nn00570710,2017-01-07T17:40:37.586Z,"28km WSW of Hawthorne, Nevada",earthquake,,1.2,0.32,18,reviewed,nn,nn
+2016-12-28T08:18:00.598Z,38.3754,-118.8977,10.8,5.6,ml,34,35.86,0.132,0.1988,nn,nn00570709,2017-01-07T17:31:19.642Z,"29km WSW of Hawthorne, Nevada",earthquake,,1.3,0.35,20,reviewed,nn,nn
+2016-12-27T23:20:55.450Z,45.7279,26.6078,80.99,5.6,mb,,20,0.522,1.13,us,us10007n3r,2016-12-31T15:12:40.671Z,"8km W of Nereju, Romania",earthquake,6.2,5.5,0.072,68,reviewed,us,us
+2016-12-25T14:22:26.750Z,-43.4164,-73.9509,35.15,7.6,mww,,29,0.367,0.83,us,us10007mn3,2017-01-04T11:45:16.661Z,"42km SW of Puerto Quellon, Chile",earthquake,6.5,3.7,,,reviewed,us,us
+2016-12-21T00:17:14.990Z,-7.5082,127.9206,152,6.7,mww,,17,3.38,1.2,us,us10007lkw,2017-01-09T00:15:03.459Z,"283km ENE of Dili, East Timor",earthquake,5.3,1.8,,,reviewed,us,us
+2016-12-20T04:21:28.590Z,-10.2254,161.2183,11.33,6.4,mww,,21,1.476,1.12,us,us200082pp,2016-12-20T16:53:22.040Z,"80km WNW of Kirakira, Solomon Islands",earthquake,7.9,3,,,reviewed,us,us
+2016-12-18T13:30:11.190Z,-9.9705,-70.9655,619.4,6.4,mww,,11,2.812,0.65,us,us200082an,2016-12-19T08:03:59.647Z,"201km S of Tarauaca, Brazil",earthquake,9.1,3.5,,,reviewed,us,us
+2016-12-17T11:27:38.940Z,-5.6497,153.9975,26.5,6.3,mww,,31,2.331,0.81,us,us200081w0,2016-12-30T09:16:00.629Z,"168km SE of Taron, Papua New Guinea",earthquake,8.3,3.6,,,reviewed,us,us
+2016-12-17T10:51:12.570Z,-4.5091,153.4495,103.19,7.9,mww,,17,1.32,1.06,us,us200081v8,2016-12-19T15:35:34.709Z,"46km E of Taron, Papua New Guinea",earthquake,7.4,4.3,,,reviewed,us,us

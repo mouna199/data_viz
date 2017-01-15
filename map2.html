@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+
+    <style>
+    </style>
+    <script type="text/javascript">  
+
+      function draw(geo_data) {
+        "use strict";
+        var margin = 100,
+            width = 1200 - margin,
+            height = 600,
+
+          svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin)
+            .attr("height", height + margin)
+            .append('g')
+            .attr('class', 'map'),
+          projection=d3.geo.mercator().scale(200).translate([width/2,height/1.5]),
+
+          path=d3.geo.path().projection(projection),
+
+
+          map=svg.selectAll('path')
+	   .data(geo_data.features)
+           .enter()
+           .append("path")
+           .attr("d",path)
+           .style("fill","lightBlue")
+           .transition()
+           .style('stroke',"black")
+           .style("stroke-width",0.5);
+
+// still need to repeat the process + labels of each city 
+
+d3.csv('example.csv',function(csv) {
+ console.log(csv)
+     svg.selectAll("circle")
+    .data(csv)
+    .enter()
+    .append("circle")
+    .attr("id","my-circle")
+    .style("fill-opacity", .0)
+     .style("fill","red")
+     .style("stroke-width",1)
+    .attr("transform", function(d) {return "translate(" + projection([d.longitude,d.latitude]) + ")";})
+    .attr("r",function(d,i) { return d.mag*2; })
+    .transition()
+     .duration(function(d,i) { return 5000; })
+     .delay(function(d,i){return i*5000;})
+     .style("fill-opacity", 0.5)
+     //.remove();
+
+var label = svg.selectAll("text")
+    .data(csv)
+    .enter()
+    .append("text")
+     .style("fill-opacity", .0)
+      .attr("class", "label")
+      .attr("transform", function(d) { return "translate(" + projection([d.longitude,d.latitude]) + ")"; })
+      .text(function(d) { return "  "+d.year+ " - "+d.month+" - "+d.day;} )
+      .transition()
+      .duration(function(d,i) { return 6000; })
+      .delay(function(d,i){return i*5000;})
+    
+      .style("fill-opacity", 1)
+      .remove(); 
+ svg.append("text")
+        .attr("x", 500)             
+        .attr("y", 30)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("fill", "black")  
+        .text("World map of earthquakes from december 2016 to january-2017 ");
+
+
+    });
+
+
+      };
+    
+
+      </script>
+  </head>
+<body>
+  <script type="text/javascript">
+  /*
+    Use D3 to load the GeoJSON file
+    */
+    
+d3.json("world_countries.json", draw);
+  </script>
+</body>
+</html>
