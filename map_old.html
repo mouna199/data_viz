@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>World map of earthquakes from december 2016 to january-2017</title>
+<div style="width: 1000px; margin-left: 23%;">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'News Cycle', sans-serif;
+            font-size: 0.95em;
+        }
+
+
+
+    </style>
+    <script type="text/javascript">  
+
+      function draw(geo_data) {
+        "use strict";
+        var margin = 20,
+            width = 1250 - margin,
+            height = 800 - margin,
+
+          svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin)
+            .attr("height", height + margin)
+	//.attr('margin-top',100)
+            .append('g')
+            .attr('class', 'map'),
+          projection=d3.geo.mercator().scale(140).translate([width/2,height/1.7]),
+
+          path=d3.geo.path().projection(projection),
+
+
+          map=svg.selectAll('path')
+	   .data(geo_data.features)
+           .enter()
+           .append("path")
+           .attr("d",path)
+           .style("fill","lightBlue")
+           .transition()
+           .style('stroke',"black")
+           .style("stroke-width",0.5);
+
+// still need to repeat the process + labels of each city 
+
+d3.csv('example.csv',function(csv) {
+ console.log(csv)
+     svg.selectAll("circle")
+    .data(csv)
+    .enter()
+    .append("circle")
+    .attr("id","my-circle")
+    .style("fill-opacity", .0)
+     
+     //.style("stroke-width",0.01)
+    .attr("transform", function(d) {return "translate(" + projection([d.longitude,d.latitude]) + ")";})
+    .attr("r",function(d) { return d.mag; })
+    .transition()
+     .duration(1000)
+     .attr("opacity", 0.5)
+     .delay(function(d,i){return i*2000;}) 
+    .attr('stroke',"red")
+    .style("stroke-width",function(d) { return d.mag*d.mag;});
+     
+     //.remove();
+
+var label = svg.selectAll("text")
+    .data(csv)
+    .enter()
+    .append("text")
+     .style("fill-opacity", .0)
+      .attr("class", "label")
+      .attr("transform", function(d) { return "translate(" + projection([d.longitude-30,d.latitude]) + ")"; })
+      .text(function(d) { return "  "+d.year+ " - "+d.month+" - "+d.day;} )
+      .transition()
+      .duration(2500)
+      .delay(function(d,i){return i*2000;})
+      .style("fill-opacity", 1)
+      .remove(); 
+        svg.append("text")
+        .attr("x", 625)             
+        .attr("y",40)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "20px") 
+        .style("fill", "black")  
+        .attr("text-anchor", "middle")
+        .text("World map of earthquakes from december 2016 to january-2017 ");
+
+
+    });
+
+
+      };
+    
+
+      </script>
+  </head>
+<body>
+  <script type="text/javascript">
+  /*
+    Use D3 to load the GeoJSON file
+    */
+    
+d3.json("world_countries.json", draw);
+  </script>
+</body>
+</html> 
