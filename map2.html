@@ -52,25 +52,21 @@
 	      
 		// printing the points on the map
 	d3.csv('example.csv',function(csv) {
-		 console.log(csv)
-    	 	svg.selectAll("circle")
-   		.data(csv)
+ 		console.log(csv)
+     	svg.selectAll("circle")
+		.data(csv)
   		.enter()
-    		.append("circle")
+		.append("circle")
 		.attr("id","my-circle")
 		.style("fill-opacity", .0)
-		.attr("transform", function(d) {
-			return "translate(" + projection([d.longitude,d.latitude]) + ")";
-			})
-		// the radius is the intensity of the earthquake
-		.attr("r",function(d,i) { return d.mag;
-			})
+		.attr("transform", function(d) {return "translate(" + projection([d.longitude,d.latitude]) + ")";})
+		.attr("r",function(d) { return d.mag; })
 		.transition()
 		.duration(1000)
-		.delay(function(d,i)    {return i*2000;
-		       })
-		.style("stroke-width",function(d) { return d.mag*d.mag;})
-		.style("opacity", 0.5);
+		.attr("opacity", 0.5)
+		.delay(function(d,i){return i*2000;}) 
+		.attr('stroke',"red")
+		.style("stroke-width",function(d) { return d.mag*d.mag;});
 		
 		// printing the labels on the map 
 	var label= svg.selectAll("text")
@@ -88,6 +84,7 @@
 	      .delay(function(d,i){return i*2000;})
               .style("fill-opacity", 1)
     	      .remove(); 
+		
 		// the title of the visualization 
  	var Title= svg.append("text")
         	.attr("x", 625)             
