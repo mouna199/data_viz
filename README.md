@@ -13,6 +13,9 @@ The visualization shows that lately, all the intense and frequent earthquakes we
 
 ### Feedback 
 
+### How to run the visualization 
+We will need to run local server to render the visualization. it can be done using Python. We first navigate to the directory that contains all of the files and then type python -m SimpleHTTPServer in the command line. When we localhost:8000 into the address bar of the browser, we should be able to see the files displayed in the web page.
+
 
 ### Resources
 Data source http://earthquake.usgs.gov <br />
