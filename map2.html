@@ -3,19 +3,28 @@
 <head>
 
   <meta charset="utf-8">
+  <title>World map of earthquakes from december 2016 to january-2017</title>
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 
     <style>
+	    html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'News Cycle', sans-serif;
+            font-size: 0.95em;
+        }
     </style>
     <script type="text/javascript">  
 
       function draw(geo_data) {
         "use strict";
-        var margin = 100,
-            width = 1200 - margin,
-            height = 600,
+        var margin = 20,
+            width = 1250 - margin,
+            height = 800-margin,
 
           svg = d3.select("body")
             .append("svg")
@@ -25,7 +34,7 @@
             .attr('class', 'map'),
 	    
 	     	// setting the projection 
-          projection=d3.geo.mercator().scale(200).translate([width/2,height/1.5]),
+          projection=d3.geo.mercator().scale(140).translate([width/2,height/1.7]),
 		
 	    	//Define path generator
           path=d3.geo.path().projection(projection),
@@ -50,8 +59,6 @@
     		.append("circle")
 		.attr("id","my-circle")
 		.style("fill-opacity", .0)
-		.style("fill","red")
-		.style("stroke-width",1)
 		.attr("transform", function(d) {
 			return "translate(" + projection([d.longitude,d.latitude]) + ")";
 			})
@@ -59,11 +66,11 @@
 		.attr("r",function(d,i) { return d.mag;
 			})
 		.transition()
-		.duration(function(d,i) { return 5000;
+		.duration(1000)
+		.delay(function(d,i)    {return i*2000;
 		       })
-		.delay(function(d,i)    {return i*5000;
-		       })
-		.style("fill-opacity", 0.5);
+		.style("stroke-width",function(d) { return d.mag*d.mag;})
+		.style("opacity", 0.5);
 		
 		// printing the labels on the map 
 	var label= svg.selectAll("text")
@@ -77,16 +84,16 @@
 	         	})
 	      .text(function(d) { return "  "+d.year+ " - "+d.month+" - "+d.day;} )
 	      .transition()
-	      .duration(function(d,i) { return 6000; })
-	      .delay(function(d,i){return i*5000;})
+	      .duration(2500)
+	      .delay(function(d,i){return i*2000;})
               .style("fill-opacity", 1)
     	      .remove(); 
 		// the title of the visualization 
  	var Title= svg.append("text")
-        	.attr("x", 500)             
-		.attr("y", 600)
+        	.attr("x", 625)             
+		.attr("y", 40)
 		.attr("text-anchor", "middle")  
-		.style("font-size", "16px") 
+		.style("font-size", "20px") 
 		.style("fill", "black")  
 		.text("World map of earthquakes from december 2016 to january-2017 ");
 
