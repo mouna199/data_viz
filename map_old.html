@@ -9,15 +9,6 @@
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 
     <style>
-        html, body {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: 'News Cycle', sans-serif;
-            font-size: 0.95em;
-        }
-
 
 
     </style>
@@ -61,16 +52,14 @@ d3.csv('example.csv',function(csv) {
     .append("circle")
     .attr("id","my-circle")
     .style("fill-opacity", .0)
-     
      //.style("stroke-width",0.01)
     .attr("transform", function(d) {return "translate(" + projection([d.longitude,d.latitude]) + ")";})
-    .attr("r",function(d) { return d.mag; })
+    .attr("r",function(d) { return d.mag*2; })
     .transition()
      .duration(1000)
-     .attr("opacity", 0.5)
-     .delay(function(d,i){return i*2000;}) 
-    .attr('stroke',"red")
-    .style("stroke-width",function(d) { return d.mag*d.mag;});
+     .delay(function(d,i){return i*3000;}) 
+    .attr('fill',"red")
+     .style("fill-opacity", 10);
      
      //.remove();
 
@@ -83,13 +72,13 @@ var label = svg.selectAll("text")
       .attr("transform", function(d) { return "translate(" + projection([d.longitude-30,d.latitude]) + ")"; })
       .text(function(d) { return "  "+d.year+ " - "+d.month+" - "+d.day;} )
       .transition()
-      .duration(2500)
-      .delay(function(d,i){return i*2000;})
+      .duration(1000)
+      .delay(function(d,i){return i*3000;})
       .style("fill-opacity", 1)
       .remove(); 
         svg.append("text")
         .attr("x", 625)             
-        .attr("y",40)
+        .attr("y",600)
         .attr("text-anchor", "middle")  
         .style("font-size", "20px") 
         .style("fill", "black")  
