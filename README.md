@@ -15,6 +15,7 @@ The visualization shows that lately, all the intense and frequent earthquakes we
 ### Feedback 
 The first feedback is that the visualization was slow and didn't show the intensity of each earthquake, also the title is supposed to be in the header not the foot of the page. 
 The second feedback was about the opacity of the points, and the size of the title, which i edited. 
+The third feedback suggested adding legend to explain the radius of each point stroke, and deleting the year since it is already in the title.
 
 ### How to run the visualization 
 We will need to run local server to render the visualization. it can be done using Python. We first navigate to the directory that contains all of the files and then type python -m SimpleHTTPServer in the command line. When we localhost:8000 into the address bar of the browser, we should be able to see the files displayed in the web page.
