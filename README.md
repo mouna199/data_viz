@@ -1,6 +1,9 @@
                                                  
 # Project : World Map of earthquakes 
 
+The link to the visualization 
+http://htmlpreview.github.io/?https://github.com/mouna199/data_viz/blob/master/index_final.html
+
 ### Summary 
 
 This visualization is a wold map of earthquakes that took place between mid-December 2016 mid-January 2017, the data used is provided from http://earthquake.usgs.gov/ and contains many variables, the one we used here are the time, the intensity of the earthquake and of course the coordinates of the location. 
